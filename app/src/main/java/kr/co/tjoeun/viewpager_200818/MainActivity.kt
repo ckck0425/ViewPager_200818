@@ -14,9 +14,15 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    override fun setupEvents() {
+
+    }
+
     override fun setValues() {
         mMainPagerAdapter = MainViewPagerAdapter(supportFragmentManager)
         mainViewPager.adapter = mMainPagerAdapter
+
+        tabLayout.setupWithViewPager(MainView)
     }
 
 }
