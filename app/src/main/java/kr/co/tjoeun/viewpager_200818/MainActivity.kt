@@ -12,6 +12,8 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupEvents()
+        setValues()
     }
 
     override fun setupEvents() {
@@ -22,7 +24,7 @@ class MainActivity : BaseActivity() {
         mMainPagerAdapter = MainViewPagerAdapter(supportFragmentManager)
         mainViewPager.adapter = mMainPagerAdapter
 
-        tabLayout.setupWithViewPager(MainView)
+        tabLayout.setupWithViewPager(mainViewPager)
     }
 
 }

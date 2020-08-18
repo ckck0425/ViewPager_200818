@@ -12,30 +12,20 @@ import kr.co.tjoeun.viewpager_200818.Fragments.PhoneNumFragment
 class MainViewPagerAdapter(fm:FragmentManager):FragmentPagerAdapter(fm){
 
     override fun getPageTitle(position: Int): CharSequence? {
-        if (position==0){
-            return "이름"
-        }
-        else if (position==1){
-            return "폰번"
-        }
-        else {
-            return "주소"
+        return when(position){
+            0 -> "이름"
+            1 -> "폰번"
+            else -> "주소"
         }
     }
 
     override fun getItem(position: Int): Fragment{
 
-        if (position==0) {
-            return NameFragment()
+        return when(position){
+            0 -> NameFragment()
+            1 -> PhoneNumFragment()
+            else -> AddFragment()
         }
-
-        else if (position==1){
-            return PhoneNumFragment()
-        }
-        else {
-            return AddFragment()
-        }
-
     }
 
     override fun getCount():Int{
